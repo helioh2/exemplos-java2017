@@ -10,6 +10,7 @@ package ticket;
  * @author Lenovo
  */
 public class TicketMachine {
+
     private double preco;
     private double balanco;
     private double total;
@@ -26,21 +27,20 @@ public class TicketMachine {
     public double getTotal() {
         return total;
     }
-    
-    
-public void inserirDinheiro(double valor){
-    this.balanco += valor;
-    this.total += valor;    
-}    
-public void imprimirBilhete(){
-    if(balanco >= preco){
-        System.out.println("Bilhete");
-        this.balanco = 0;
-    }else{
-        System.out.println("Coloque mais dinheiro");
-    }
-    
-}
 
+    public void inserirDinheiro(double valor) {
+        this.balanco += valor;
+        this.total += valor;
+    }
+
+    public void imprimirBilhete() {
+        if (balanco >= preco) {
+            System.out.println("Bilhete");
+            this.balanco = 0;
+        } else {
+            System.out.println("Coloque mais dinheiro");
+        }
+
+    }
 
 }

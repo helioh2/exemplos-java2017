@@ -79,9 +79,7 @@ public class ContaCorrente {
     public boolean equals(Object obj) {
         if (obj instanceof ContaCorrente){
             ContaCorrente outro = (ContaCorrente) obj;
-            if (this.agencia == outro.agencia && this.numero == outro.numero){
-                return true;
-            }     
+            return this.agencia == outro.agencia && this.numero == outro.numero;
         }
         return false;
     }
@@ -92,9 +90,7 @@ public class ContaCorrente {
                 "Nome: "+nomeCliente+"\n"+
                 "Saldo: "+saldo+"\n"+
                         "-----------------------";
-                        
-                
-                
+                       
     }
     
     
