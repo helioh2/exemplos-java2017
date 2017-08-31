@@ -12,6 +12,8 @@ import casa.Movel;
 import casa.Pessoa;
 import corrida.Data;
 import corrida.RegistroDiario;
+import restaurante.FaixaPreco;
+import restaurante.Restaurante;
 
 /**
  *
@@ -106,6 +108,10 @@ public class ExemploJava1 {
         
         System.out.println(sala.getLampada().isAceso());
                
+        
+        Restaurante r1 = new Restaurante();
+        r1.setFaixaPreco(FaixaPreco.CARO);
+        System.out.println(r1.getFaixaPreco());
         
         
         

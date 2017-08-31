@@ -8,10 +8,7 @@ package casa;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- *
- * @author Lenovo
- */
+
 public class Comodo {
     
     private Lampada lampada;
