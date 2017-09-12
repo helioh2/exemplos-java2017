@@ -12,6 +12,9 @@ import casa.Movel;
 import casa.Pessoa;
 import corrida.Data;
 import corrida.RegistroDiario;
+import email.MailClient;
+import email.MailItem;
+import email.MailServer;
 import restaurante.FaixaPreco;
 import restaurante.Restaurante;
 
@@ -112,6 +115,21 @@ public class ExemploJava1 {
         Restaurante r1 = new Restaurante();
         r1.setFaixaPreco(FaixaPreco.CARO);
         System.out.println(r1.getFaixaPreco());
+        
+        
+        MailServer servidor = new MailServer();
+        MailClient cliente1 = new MailClient("fulano@ufpr");
+        MailClient cliente2 = new MailClient("beltrano@ufpr");
+        servidor.addClient(cliente1);
+        servidor.addClient(cliente2);
+        System.out.println(servidor.getClientes());
+        
+        MailItem msg1 = cliente1.criarMensagem("beltrano@ufpr", 
+                "Ola Beltrano", "Prazer em conhece-lo");
+        cliente1.enviar(msg1);
+        
+        System.out.println(cliente2.getCaixaEntrada());
+        System.out.println(cliente1.getEnviadas());
         
         
         
