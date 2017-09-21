@@ -1,3 +1,5 @@
+package figuras;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -7,18 +9,20 @@
  *
  * @author ufprsp
  */
-public class Elipse implements Figura {
+public class Retangulo implements Figura {
     
-    private int raio1;
-    private int raio2;
+    
+    private double lado1;
+    private double lado2;
     private Pos pos;
     
     public double area(){
-        return 0.0;
+        return lado1*lado2;
     }
     
     public void desenhar() {
-        System.out.println("Desenhei uma elipse "+raio1+" "+raio2+ " "+pos);
+        System.out.println("Desenhei um retangulo "+lado1+" "+lado2+ " "+pos);
     }
+    
     
 }
