@@ -9,13 +9,14 @@ package figuras;
  *
  * @author ufprsp
  */
-//Classe totalmente abstrata
-public interface Figura {
+public abstract class Figura {
     
-
+    protected Pos pos;
     
-    public double area();
+    public abstract double area();
     
-    public void desenhar();
+    public void desenhar(){
+        System.out.println("Desenhar figura geometrica generico");
+    }
     
 }

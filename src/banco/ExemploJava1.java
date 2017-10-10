@@ -26,14 +26,14 @@ public class ExemploJava1 {
      */
     public static void main(String[] args) {
         
-        Funcionario fulano = new Funcionario("fulano", "2782828", 1500);       
+//        Funcionario fulano = new Funcionario("fulano", "2782828", 1500);       
         Funcionario boss = new Gerente("boss", "2929292", 7000);
         Funcionario severino = new Seguranca("severino", "2782828", 5000);
         Secretaria maria = new Secretaria("maria", "256252", 4000);
         
 //        severino = boss;
         
-        System.out.println(fulano.getBonificacao());
+//        System.out.println(fulano.getBonificacao());
         System.out.println(boss.getBonificacao());
         System.out.println(severino.getBonificacao());
         System.out.println(maria.getBonificacao());
@@ -41,10 +41,14 @@ public class ExemploJava1 {
         ControleBonificacoes controleBonificacoes = new ControleBonificacoes();
         System.out.println(controleBonificacoes.getTotalBonificacoes());
         
-        controleBonificacoes.registra(fulano);
-        controleBonificacoes.registra(boss);
-        controleBonificacoes.registra(severino);
-        controleBonificacoes.registra(maria);
+//        controleBonificacoes.registra(fulano);
+//        controleBonificacoes.registra(boss);
+//        controleBonificacoes.registra(severino);
+//        controleBonificacoes.registra(maria);
+        
+        List<Funcionario> lista = Arrays.asList(boss, severino, maria);
+        controleBonificacoes.registra(lista);
+        
         
         System.out.println(controleBonificacoes.getTotalBonificacoes());
     }

@@ -9,20 +9,22 @@ package figuras;
  *
  * @author ufprsp
  */
-public class Retangulo implements Figura {
+public class Retangulo extends Figura implements Desenho {
     
     
     private double lado1;
     private double lado2;
-    private Pos pos;
     
     public double area(){
         return lado1*lado2;
     }
-    
+
+    @Override
     public void desenhar() {
-        System.out.println("Desenhei um retangulo "+lado1+" "+lado2+ " "+pos);
+        super.desenhar(); //To change body of generated methods, choose Tools | Templates.
     }
+    
+ 
     
     
 }

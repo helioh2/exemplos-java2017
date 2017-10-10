@@ -27,7 +27,7 @@ public class Seguranca extends Funcionario {
 
     @Override
     public double getBonificacao() {
-        return super.getBonificacao() + 500;
+        return salario*0.1 + 500;
     
     }
     

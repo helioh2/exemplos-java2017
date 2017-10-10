@@ -9,7 +9,7 @@ package banco;
  *
  * @author Lenovo
  */
-public class Funcionario {
+public abstract class Funcionario {
     
     protected String nome;
     protected String cpf;
@@ -33,11 +33,11 @@ public class Funcionario {
     public double getSalario() {
         return salario;
     }
+   
+    
+    public abstract double getBonificacao();
     
     
-    public double getBonificacao() {
-        return this.salario*0.1;
-    }
     
     
 }

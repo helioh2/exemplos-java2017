@@ -2,6 +2,8 @@ package figuras;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /*
@@ -25,6 +27,8 @@ public class ExemploJava1 {
         
         Figura ret1 = new Retangulo();
         Elipse elip1 = new Elipse();
+        elip1.setRaio1(100);
+        elip1.setRaio2(50);
         
         Figura fig1;
         fig1 = new Retangulo();
@@ -44,6 +48,16 @@ public class ExemploJava1 {
         
         pintaDentro(fig1, Color.red);
         pintaDentro(elip1, Color.PINK);
+        
+        Elipse elipse2 = new Elipse();
+        elipse2.setRaio1(40);
+        elipse2.setRaio2(60);
+        
+        ArrayList
+        
+        List lista = Arrays.asList(elip1, elipse2);
+        Collections.sort(lista);       
+        System.out.println(lista);
       
     }
     

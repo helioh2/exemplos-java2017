@@ -5,6 +5,8 @@
  */
 package banco;
 
+import java.util.List;
+
 /**
  *
  * @author Lenovo
@@ -13,8 +15,20 @@ public class ControleBonificacoes {
     
     private double totalBonificacoes = 0;
     
+
+    
     public void registra(Funcionario funcionario){
         this.totalBonificacoes += funcionario.getBonificacao();
+    }
+    
+    public void registra(List<Funcionario> funcionarios){
+        for (Funcionario funcionario : funcionarios){
+           this.registra(funcionario);
+        }
+    }
+    
+    public boolean registra(){
+        return true;
     }
 
     public double getTotalBonificacoes() {
