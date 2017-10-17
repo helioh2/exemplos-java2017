@@ -9,12 +9,13 @@ package figuras;
  *
  * @author ufprsp
  */
-public class Retangulo extends Figura implements Desenho {
+public class Retangulo extends Figura implements Desenho, AreaCalculavel {
     
     
     private double lado1;
     private double lado2;
     
+    @Override
     public double area(){
         return lado1*lado2;
     }

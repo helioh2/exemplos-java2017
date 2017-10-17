@@ -9,11 +9,12 @@ package figuras;
  *
  * @author ufprsp
  */
-public class Elipse extends Figura implements Comparable {
+public class Elipse extends Figura implements Comparable, AreaCalculavel {
     
     private int raio1;
     private int raio2;
     
+    @Override
     public double area(){
         return 0.0;
     }
