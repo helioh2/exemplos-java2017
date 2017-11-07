@@ -5,6 +5,10 @@
  */
 package banco;
 
+import exceptions.SaldoInsuficienteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Lenovo
@@ -54,25 +58,31 @@ public class ContaCorrente {
      * @param valor
      * @return true se foi possível sacar, senão falso
      */
-    public boolean sacar(double valor) {
-        if (valor <= this.saldo) {
-            this.saldo -= valor;
-            return true;
+    public void sacar(double valor) throws SaldoInsuficienteException  {
+        if (valor < 0) {
+            throw new IllegalArgumentException("Valor negativo.");
+        }    
+        
+        if (valor > this.saldo) {
+            throw new SaldoInsuficienteException("Valor excede o saldo disponível.");
         }
-        return false;
+
+        //else
+        this.saldo -= valor;
+        
     }
     
     public void depositar(double valor) {
         this.saldo += valor;
     }
     
-    public boolean transferir(double valor, ContaCorrente outra) {
-        if (this.sacar(valor)){
-            outra.depositar(valor);
-            return true;
-        }     
-        return false;
-        
+    public void transferir(double valor, ContaCorrente outra) throws SaldoInsuficienteException {
+//        try {
+            this.sacar(valor);
+//        } catch (SaldoInsuficienteException ex) {
+//            throw new RuntimeException("Saldo insuficiente para transferir");
+//        }
+        outra.depositar(valor);      
     }
 
     @Override

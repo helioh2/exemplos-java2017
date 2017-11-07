@@ -1,8 +1,11 @@
 package banco;
 
+import exceptions.SaldoInsuficienteException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import zoo.Animal;
 import zoo.Cobra;
 import zoo.Leao;
@@ -51,6 +54,32 @@ public class ExemploJava1 {
         
         
         System.out.println(controleBonificacoes.getTotalBonificacoes());
+    
+        ContaCorrente conta1 = new ContaCorrente("fulano", 123, 345);
+        
+        try {
+            conta1.sacar(100);
+        } catch (SaldoInsuficienteException e) {
+            System.out.println(e.getMessage());
+        }
+        
+        try {
+            conta1.sacar(100);
+        } catch (SaldoInsuficienteException ex) {
+            Logger.getLogger(ExemploJava1.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalArgumentException ex) {
+            System.out.println("Valor negativo (invalido)");
+        }
+        
+        ContaCorrente conta2 = new ContaCorrente("beltrano", 123, 34556);
+        
+        try {
+            conta1.transferir(200, conta2);
+        } catch (SaldoInsuficienteException ex) {
+            Logger.getLogger(ExemploJava1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        System.out.println("Acabou direitinho");
     }
     
 }
